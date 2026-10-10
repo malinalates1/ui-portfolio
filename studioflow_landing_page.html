@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-slate-950">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudioFlow - The Ultimate Operating System for Creative Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            950: '#030712',
+                            900: '#0b0f19',
+                            800: '#111827',
+                            700: '#1f2937'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+    </style>
+</head>
+<body class="text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-cube text-white text-lg"></i>
+                </div>
+                <span class="font-extrabold text-xl tracking-tight text-white">StudioFlow</span>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#features" class="hover:text-white transition">Features</a>
+                <a href="#workflow" class="hover:text-white transition">Workflow</a>
+                <a href="#testimonials" class="hover:text-white transition">Testimonials</a>
+                <a href="#pricing" class="hover:text-white transition">Pricing</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="dashboard.html" target="_blank" class="text-sm font-medium text-slate-300 hover:text-white transition">Live Dashboard</a>
+                <a href="#pricing" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-indigo-600/30 transition">Start Free Trial</a>
+            </div>
+
+            <button onclick="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark-900 border-b border-slate-800 px-6 py-6 space-y-4">
+            <a href="#features" class="block text-slate-300 hover:text-white font-medium">Features</a>
+            <a href="#workflow" class="block text-slate-300 hover:text-white font-medium">Workflow</a>
+            <a href="#testimonials" class="block text-slate-300 hover:text-white font-medium">Testimonials</a>
+            <a href="#pricing" class="block text-slate-300 hover:text-white font-medium">Pricing</a>
+            <div class="pt-4 border-t border-slate-800 flex flex-col space-y-3">
+                <a href="dashboard.html" target="_blank" class="w-full text-center bg-dark-800 text-white py-3 rounded-xl font-medium">Live Dashboard</a>
+                <a href="#pricing" class="w-full text-center bg-indigo-600 text-white py-3 rounded-xl font-semibold shadow-lg shadow-indigo-600/20">Start Free Trial</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+        <!-- Background Glow Effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-indigo-600/30 to-purple-600/30 blur-[140px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 bg-indigo-500/10 border border-indigo-500/20 px-4 py-2 rounded-full text-indigo-400 text-xs font-semibold mb-6 animate-pulse">
+                <i class="fa-solid fa-sparkles"></i>
+                <span>Introducing StudioFlow 3.0 • AI Schedule Optimizer</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight max-w-4xl mx-auto leading-[1.1]">
+                The Operating System for <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Creative Studios</span>
+            </h1>
+
+            <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                Streamline client bookings, equipment asset tracking, and stage management in one lightning-fast, beautifully crafted workspace.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="dashboard.html" target="_blank" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-indigo-600/30 transition flex items-center justify-center space-x-3">
+                    <span>Explore Live Dashboard</span>
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+                <a href="#pricing" class="w-full sm:w-auto bg-dark-900 hover:bg-dark-800 text-slate-200 border border-slate-800 px-8 py-4 rounded-2xl font-bold transition flex items-center justify-center space-x-3">
+                    <i class="fa-regular fa-circle-play text-indigo-400"></i>
+                    <span>Watch 2-Min Demo</span>
+                </a>
+            </div>
+
+            <!-- Hero Product Mockup Preview -->
+            <div class="mt-16 relative max-w-5xl mx-auto rounded-3xl border border-slate-800 bg-dark-900/80 p-3 shadow-2xl animate-float">
+                <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-purple-500/10 rounded-3xl pointer-events-none"></div>
+                <img src="https://placehold.co/1100x600/111827/6366f1?text=StudioFlow+Dashboard+Interface+Preview" alt="Dashboard Preview" class="rounded-2xl w-full object-cover shadow-inner border border-slate-800">
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Logos -->
+    <section class="py-12 border-y border-slate-900 bg-dark-900/40">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-8">Trusted by production teams & creative agencies worldwide</p>
+            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition duration-500">
+                <span class="text-xl font-bold tracking-wider text-slate-300">VOGUE</span>
+                <span class="text-xl font-extrabold tracking-tight text-slate-300">NETFLIX</span>
+                <span class="text-xl font-bold tracking-widest text-slate-300">SONY MUSIC</span>
+                <span class="text-xl font-bold tracking-tight text-slate-300">TESLA</span>
+                <span class="text-xl font-bold tracking-wider text-slate-300">PARAMOUNT</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-3">Engineered for Velocity</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Everything your studio needs to scale</h3>
+                <p class="mt-4 text-slate-400 text-base">Replace fragmented spreadsheets and manual calendar juggling with an all-in-one studio operating system.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-dark-900/60 border border-slate-800/80 hover:border-indigo-500/50 p-8 rounded-3xl transition duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-600/10 text-indigo-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Smart Stage Scheduling</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Prevent double-booking clashes across multi-stage complexes with intelligent calendar locks and real-time availability alerts.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-dark-900/60 border border-slate-800/80 hover:border-purple-500/50 p-8 rounded-3xl transition duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-600/10 text-purple-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-box-archive"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Asset & Gear Tracking</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Keep absolute inventory control over cameras, cinema lenses, lighting rigs, and audio gear with automated check-in logs.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-dark-900/60 border border-slate-800/80 hover:border-emerald-500/50 p-8 rounded-3xl transition duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-600/10 text-emerald-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Automated Invoicing & ROI</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Generate line-item invoices instantly upon session completion, track outstanding balances, and analyze monthly profitability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-dark-900/30 border-y border-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-3">Transparent Pricing</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Invest in your studio's efficiency</h3>
+                <p class="mt-4 text-slate-400 text-base">Simple, predictable pricing built for independent creators and enterprise stage complexes.</p>
+                
+                <!-- Monthly / Annual Toggle -->
+                <div class="mt-8 inline-flex items-center space-x-3 bg-dark-900 p-1.5 rounded-2xl border border-slate-800">
+                    <button onclick="setPricing('monthly')" id="btnMonthly" class="px-5 py-2 rounded-xl text-xs font-semibold bg-indigo-600 text-white transition">Monthly Billing</button>
+                    <button onclick="setPricing('annual')" id="btnAnnual" class="px-5 py-2 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition">Annual Billing <span class="text-emerald-400 text-[10px] ml-1 font-bold">SAVE 20%</span></button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Tier 1 -->
+                <div class="bg-dark-900 border border-slate-800 p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-lg text-white">Independent</h4>
+                        <p class="text-xs text-slate-400 mt-1">For solo photographers and small gear rental spaces.</p>
+                        <div class="my-6">
+                            <span id="price1" class="text-4xl font-extrabold text-white">$49</span>
+                            <span class="text-slate-400 text-xs">/month</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i><span>1 Studio Stage</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i><span>Up to 50 Monthly Bookings</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i><span>Basic Gear Inventory</span></li>
+                            <li class="flex items-center space-x-3 text-slate-500"><i class="fa-solid fa-xmark text-slate-600 text-xs"></i><span>Custom Invoicing & Branding</span></li>
+                        </ul>
+                    </div>
+                    <a href="dashboard.html" target="_blank" class="mt-8 block w-full bg-dark-800 hover:bg-dark-700 text-center text-white py-3 rounded-xl font-semibold text-sm transition border border-slate-700">Get Started</a>
+                </div>
+
+                <!-- Tier 2 (Featured) -->
+                <div class="bg-gradient-to-b from-indigo-950/80 to-dark-900 border-2 border-indigo-500 p-8 rounded-3xl flex flex-col justify-between relative shadow-2xl shadow-indigo-600/10">
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">Most Popular</span>
+                    <div>
+                        <h4 class="font-bold text-lg text-white">Studio Complex</h4>
+                        <p class="text-xs text-indigo-300 mt-1">For professional multi-stage rental businesses.</p>
+                        <div class="my-6">
+                            <span id="price2" class="text-4xl font-extrabold text-white">$149</span>
+                            <span class="text-slate-400 text-xs">/month</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-200">
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i><span>Up to 5 Studio Stages</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i><span>Unlimited Bookings</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i><span>Advanced Equipment Tracking</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i><span>Automated Invoicing & Reports</span></li>
+                        </ul>
+                    </div>
+                    <a href="dashboard.html" target="_blank" class="mt-8 block w-full bg-indigo-600 hover:bg-indigo-500 text-center text-white py-3 rounded-xl font-semibold text-sm transition shadow-lg shadow-indigo-600/30">Start 14-Day Free Trial</a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="bg-dark-900 border border-slate-800 p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-lg text-white">Enterprise</h4>
+                        <p class="text-xs text-slate-400 mt-1">For Hollywood production lots and mega studios.</p>
+                        <div class="my-6">
+                            <span id="price3" class="text-4xl font-extrabold text-white">$399</span>
+                            <span class="text-slate-400 text-xs">/month</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i><span>Unlimited Stages & Locations</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i><span>Custom API & ERP Integrations</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i><span>Dedicated Account Manager</span></li>
+                            <li class="flex items-center space-x-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i><span>SLA Uptime Guarantee</span></li>
+                        </ul>
+                    </div>
+                    <a href="dashboard.html" target="_blank" class="mt-8 block w-full bg-dark-800 hover:bg-dark-700 text-center text-white py-3 rounded-xl font-semibold text-sm transition border border-slate-700">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-3">Customer Success</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Loved by industry producers</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-dark-900 border border-slate-800 p-8 rounded-3xl relative">
+                    <div class="flex items-center space-x-1 text-amber-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">"StudioFlow completely eliminated scheduling conflicts between our cyclorama stage and podcast studio. Our team saves at least 15 hours every week."</p>
+                    <div class="flex items-center space-x-3">
+                        <img src="https://placehold.co/44x44/6366f1/ffffff?text=AR" alt="Avatar" class="w-11 h-11 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-semibold text-white text-sm">Marcus Vance</h5>
+<p class="text-xs text-slate-400">Head of Production, CineScale Studios</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-900 border border-slate-800 p-8 rounded-3xl relative">
+                    <div class="flex items-center space-x-1 text-amber-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">"The equipment tracking feature alone paid for the subscription in month one. We haven't lost a single lens or lighting head since switching over."</p>
+                    <div class="flex items-center space-x-3">
+                        <img src="https://placehold.co/44x44/ec4899/ffffff?text=SL" alt="Avatar" class="w-11 h-11 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-semibold text-white text-sm">Sarah Lin</h5>
+                            <p class="text-xs text-slate-400">Studio Director, Prism Creative</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-slate-800 py-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div class="md:col-span-1">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <span class="font-extrabold text-lg text-white">StudioFlow</span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">The modern operating system for creative studios and production spaces.</p>
+            </div>
+            <div>
+                <h6 class="font-semibold text-xs text-white uppercase tracking-wider mb-4">Product</h6>
+                <ul class="space-y-2.5 text-xs text-slate-400">
+                    <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                    <li><a href="dashboard.html" target="_blank" class="hover:text-white transition">Dashboard UI</a></li>
+                    <li><a href="#pricing" class="hover:text-white transition">Pricing</a></li>
+                    <li><a href="#" class="hover:text-white transition">Changelog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-semibold text-xs text-white uppercase tracking-wider mb-4">Company</h6>
+                <ul class="space-y-2.5 text-xs text-slate-400">
+                    <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                    <li><a href="#" class="hover:text-white transition">Press Kit</a></li>
+                    <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-semibold text-xs text-white uppercase tracking-wider mb-4">Legal</h6>
+                <ul class="space-y-2.5 text-xs text-slate-400">
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-white transition">Security</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+            <p>© 2026 StudioFlow Technologies Inc. All rights reserved.</p>
+            <div class="flex items-center space-x-4 mt-4 sm:mt-0">
+                <a href="#" class="hover:text-slate-300 transition"><i class="fa-brands fa-twitter text-sm"></i></a>
+                <a href="#" class="hover:text-slate-300 transition"><i class="fa-brands fa-github text-sm"></i></a>
+                <a href="#" class="hover:text-slate-300 transition"><i class="fa-brands fa-linkedin text-sm"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function setPricing(type) {
+            const btnMonthly = document.getElementById('btnMonthly');
+            const btnAnnual = document.getElementById('btnAnnual');
+            const p1 = document.getElementById('price1');
+            const p2 = document.getElementById('price2');
+            const p3 = document.getElementById('price3');
+
+            if (type === 'annual') {
+                btnAnnual.className = 'px-5 py-2 rounded-xl text-xs font-semibold bg-indigo-600 text-white transition';
+                btnMonthly.className = 'px-5 py-2 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition';
+                p1.textContent = '$39';
+                p2.textContent = '$119';
+                p3.textContent = '$319';
+            } else {
+                btnMonthly.className = 'px-5 py-2 rounded-xl text-xs font-semibold bg-indigo-600 text-white transition';
+                btnAnnual.className = 'px-5 py-2 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition';
+                p1.textContent = '$49';
+                p2.textContent = '$149';
+                p3.textContent = '$399';
+            }
+        }
+    </script>
+</body>
+</html>
